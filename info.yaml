@@ -1,46 +1,41 @@
 # Tiny Tapeout project information
+
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
-  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  title: "Pantografo"
+  author: "Jean Cárdenas"
+  discord: ""
+  description: "Deteccion de bloqueos mecanicos y fallas de recorrido en un pantografo de corte X-Y."
+  language: "Verilog"
+  clock_hz: 10000000
 
-  # How many tiles your design occupies? A single tile is about 340x160 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 3x4 or 4x4
+  tiles: "1x1"
 
-  # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module: "tt_um_example"
 
-  # List your project's source files here.
-  # Source files must be in ./src and you must list each source file separately, one per line.
-  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "project.v"
 
-# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
-# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+# Pinout
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "MOV_X"
+  ui[1]: "MOV_Y"
+  ui[2]: "ENC_X"
+  ui[3]: "ENC_Y"
+  ui[4]: "LIM_X_POS"
+  ui[5]: "LIM_X_NEG"
+  ui[6]: "LIM_Y_POS"
+  ui[7]: "LIM_Y_NEG"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "BLOCK_X"
+  uo[1]: "BLOCK_Y"
+  uo[2]: "FAULT_X_POS"
+  uo[3]: "FAULT_X_NEG"
+  uo[4]: "FAULT_Y_POS"
+  uo[5]: "FAULT_Y_NEG"
+  uo[6]: "ALARM"
+  uo[7]: "STOP"
 
   # Bidirectional pins
   uio[0]: ""
