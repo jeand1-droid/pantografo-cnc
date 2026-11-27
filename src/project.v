@@ -60,7 +60,8 @@ module tt_um_example #(
     localparam integer WIDTH =
         (TIMEOUT > 1) ? $clog2(TIMEOUT) : 1;
 
-    localparam [WIDTH-1:0] LIMITE = TIMEOUT - 1;
+   localparam [31:0] LIMITE_TEMP = TIMEOUT - 32'd1;
+   localparam [WIDTH-1:0] LIMITE = LIMITE_TEMP[WIDTH-1:0];
 
     reg [WIDTH-1:0] contador_x;
     reg [WIDTH-1:0] contador_y;
